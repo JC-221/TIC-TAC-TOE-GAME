@@ -52,7 +52,7 @@ class Tgame{
                     continue;
                 }
                 if(option < 1 || option > 9){
-                    cout << "Invalid position! Choose between 1 and 9.\n";
+                    cout << "Invalid position! Choose value between 1 and 9.\n";
                     continue;
                 }
                 bool valid = true;
@@ -141,11 +141,9 @@ class Tgame{
             }
             return false;
         }
-        //fourth function for playing the game
-        
+        //fourth function for playing the game        
         void playGame(){
-            char again;
-            
+            char again; 
             do{
                 int player = 1;
                 bool winner = false;
