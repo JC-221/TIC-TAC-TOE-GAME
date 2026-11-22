@@ -203,7 +203,7 @@ class Tgame{
         }
     };
 
-//then the main part of the program
+//then the main part of the program is now heyre, i have to all only one function called playGame because other functions were already called inside it 
 int main(){
     Tgame game;
     game.playGame();  //calling function of playing game  
