@@ -45,17 +45,22 @@ class Tgame{
                 cout << "\nPlayer " << player
                      << " choose your position: ";
                 cin >> option;
-                if(cin.fail()){
-                    cin.clear();
-                    cin.ignore(1000, '\n');
+                if(cin.fail()){//this function detect when a user enters an invalid input type
+                    cin.clear();//this resets that failed state so that the program can receive new input
+
+					//this removes unwanted characters remaining in the input
+					
+                    cin.ignore(1000, '\n');//1000 means to ingonre up to 1000 characters and '\n' means to stop ignoring when a new line is reached
                     cout << "Invalid input! Enter a number.\n";
-                    continue;
+                    continue;//this helps to tell program to continue to another iteration and skip other remaining instructions in current iteration
                 }
-                if(option < 1 || option > 9){
+                if(option < 1 || option > 9){//this helps program to detect and reject number written by user which is not included in range of 1 to 9
                     cout << "Invalid position! Choose value between 1 and 9.\n";
-                    continue;
+                    continue;//allows program to continue when user choose wrong number instead of being terminated
                 }
                 bool valid = true;
+				
+				//condition to substitute these values by X or O based on the user playing, if it is player 1 it will be X and O when is player 2
                 switch(option){
                     case 1:
                         if(board[0][0] == '1')
@@ -103,6 +108,7 @@ class Tgame{
                         else valid = false;
                         break;
                 }
+				
                 //this condition give turn to the next player to continue playing
                 if(valid){
                     break;
@@ -126,6 +132,8 @@ class Tgame{
                 cout << "\nPlayer 1 wins!\n";
                 return true;
             }
+
+			//all possible ways to win the game
             if(
                 (board[0][0]=='O' && board[0][1]=='O' && board[0][2]=='O') ||
                 (board[1][0]=='O' && board[1][1]=='O' && board[1][2]=='O') ||
@@ -152,6 +160,7 @@ class Tgame{
 
                 system("cls");
 
+				//header for the game seems to be the titlee of the game
                 cout << "\n============================\n";
                 cout << "       TIC-TAC-TOE GAME";
                 cout << "\n============================\n";
@@ -185,17 +194,18 @@ class Tgame{
                     displayBoard();
                     cout << "\nThe game is a draw!\n";
                 }
-                
+                //asking users if they want to continue playing game
                 cout << "\nDo you want to play again? (Y/N): ";
                 cin >> again;
             }
-			while(again == 'Y' || again == 'y');
+			while(again == 'Y' || again == 'y');//checks both capital or small letter to tell program that they mean the same
             cout << "\nThank you for playing!\n";
         }
     };
 
+//then the main part of the program
 int main(){
     Tgame game;
-    game.playGame();    
-    return 0;
+    game.playGame();  //calling function of playing game  
+    return 0;// this always terminate or eends the program
 }
