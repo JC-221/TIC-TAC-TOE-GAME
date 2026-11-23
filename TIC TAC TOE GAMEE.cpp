@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib>//this library helps to enable function system("cls") which helps to clear the console screen before displaying the updated game's board
 using namespace std;
 
 class Tgame{
@@ -209,3 +209,4 @@ int main(){
     game.playGame();  //calling function of playing game  
     return 0;// this always terminate or eends the program
 }
+
