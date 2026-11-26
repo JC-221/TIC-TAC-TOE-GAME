@@ -158,7 +158,7 @@ class Tgame{
 
                 initializeBoard();
 
-                system("cls");
+                system("cls");//this function clears the board and display the updated one
 
 				//header for the game seems to be the titlee of the game
                 cout << "\n============================\n";
